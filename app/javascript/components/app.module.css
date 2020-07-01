@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+body {
+  background-color: grey;
+  font-family: "Roboto Slab", serif;
+}
+
+.navbar {
+  background: black;
+  color: white;
+  padding: 2em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.navbar_link {
+  color: white;
+}
+
+.navbar_link:hover {
+  color: white;
+  background-color: grey;
+}
+
+.countdown {
+  background-color: grey;
+  color: white;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+  flex: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
