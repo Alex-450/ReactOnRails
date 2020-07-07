@@ -17,11 +17,12 @@ body {
 
 .navbar_link {
   color: white;
+  text-decoration: none;
 }
 
 .navbar_link:hover {
   color: white;
-  background-color: grey;
+  text-decoration: underline;
 }
 
 .countdown {
@@ -44,4 +45,24 @@ body {
   margin-top: 8px;
   vertical-align: middle;
   width: 100%;
+}
+
+.riders_div {
+  display: flex;
+  justify-content: center;
+}
+
+.riders_table {
+  width: 75%;
+  text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+.map_div {
+  height: 180px;
 }

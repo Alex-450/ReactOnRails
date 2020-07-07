@@ -10,6 +10,12 @@ const Navbar = () => (
       <a className={styles.navbar_link} href="/gallery">
         Gallery
       </a>
+      <a className={styles.navbar_link} href="/riders">
+        Riders
+      </a>
+      <a className={styles.navbar_link} href="/locations">
+        Locations
+      </a>
     </nav>
   </div>
 );

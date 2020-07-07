@@ -1,0 +1,2 @@
+class SloganSubmission < ApplicationRecord
+end
