@@ -1,22 +1,28 @@
 import React from "react";
-import PropTypes from "prop-types";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
 import CountDowntimer from "./CountdownTimer";
-import Images from "./Images";
-import Slogan from "./Slogan";
+import styles from "../components/css/app.module.css";
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <Navbar />
-        <p>Home page to go here</p>
-        <CountDowntimer />
-        <Slogan />
-        <Images />
-
-        <Footer />
+        <div className={styles.home_background}>
+          <div className={styles.container}>
+            <div className={styles.countdown}>
+              <CountDowntimer />
+              <div className={styles.row}>
+                <a href="/riders" className={styles.home_link}>
+                  Who's competing →
+                </a>
+              </div>
+              <div className={styles.row}>
+                <a href="/locations" className={styles.home_link}>
+                  Where are they →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

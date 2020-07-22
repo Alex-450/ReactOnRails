@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./app.module.css";
+import styles from "../components/css/app.module.css";
 
 const Navbar = () => (
   <div>
@@ -15,6 +15,9 @@ const Navbar = () => (
       </a>
       <a className={styles.navbar_link} href="/locations">
         Locations
+      </a>
+      <a className={styles.navbar_link} href="/contest">
+        Contest
       </a>
     </nav>
   </div>

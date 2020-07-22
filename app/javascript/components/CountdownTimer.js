@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./app.module.css";
+import styles from "../components/css/app.module.css";
 
 function CountDownTimer() {
   const calculateTimeLeft = () => {
@@ -41,8 +41,8 @@ function CountDownTimer() {
   });
 
   return (
-    <div className={styles.countdown}>
-      <h1>Time until the race</h1>
+    <div>
+      <h1>Boulder Bike Tour is on August 1st, 2020</h1>
       {timerComponents.length ? (
         timerComponents
       ) : (

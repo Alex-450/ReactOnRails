@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./app.module.css";
+import styles from "../components/css/app.module.css";
 import { flickrApi } from "./constants";
 
 function Images() {
@@ -60,9 +60,13 @@ function Images() {
           ))}
         </div>
         {pageNumber > 1 && (
-          <button onClick={loadPrevPage}>← Previous Page</button>
+          <button className={styles.image_button_prev} onClick={loadPrevPage}>
+            ←
+          </button>
         )}
-        <button onClick={loadNextPage}>Next Page →</button>
+        <button className={styles.image_button_next} onClick={loadNextPage}>
+          →
+        </button>
       </div>
     );
   }
