@@ -42,7 +42,8 @@ function CountDownTimer() {
 
   return (
     <div>
-      <h1>Boulder Bike Tour is on August 1st, 2020</h1>
+      <h1>Boulder Bike Tour</h1>
+      <h1>August 1st, 2020</h1>
       {timerComponents.length ? (
         timerComponents
       ) : (

@@ -3,7 +3,7 @@ import { Map, Marker, Popup, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
 import styles from "../components/css/app.module.css";
 import { useState, useEffect } from "react";
-import { test } from "./test";
+import { Spinner, Button, Row } from "react-bootstrap";
 
 function Locations() {
   const [riders, setRiders] = useState([]);
@@ -28,7 +28,24 @@ function Locations() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Row className="justify-content-center align-items-center m-3">
+          <Button variant="warning" disabled>
+            <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              aria-hidden="true"
+            >
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+            Loading...
+          </Button>
+        </Row>
+      </div>
+    );
   } else {
     return (
       <div>

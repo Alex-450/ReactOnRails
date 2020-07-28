@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
 
+* {
+  font-family: "Roboto Slab", serif;
+}
+
 body {
-  background-color: grey;
+  background-color: grey !important;
   font-family: "Roboto Slab", serif;
 }
 
@@ -12,44 +16,6 @@ body {
   align-items: center;
   flex-flow: row wrap;
   padding: 20px;
-}
-
-.navbar {
-  background: #ffac53;
-  color: white;
-  padding: 2em;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  margin: 0;
-}
-
-.navbar_link {
-  color: white;
-  text-decoration: none;
-}
-
-.navbar_link:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.home_background {
-  background: url(../images/raceCoverPicture.jpg) no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  width: 100%;
-  top: 50%;
-}
-
-.countdown {
-  color: #ffac53;
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 3em;
-  border: 2px solid black;
-  border-radius: 10px;
-  text-align: center;
-  align-items: center;
 }
 
 .row {
@@ -64,6 +30,49 @@ body {
   padding: 0 4px;
 }
 
+.navbar {
+  background: #ffac53;
+  color: white !important;
+}
+
+.footer {
+  background-color: #ffac53;
+  color: white;
+}
+
+.navbar_link {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar_link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.home_background {
+  background: url(../images/raceCoverPicture.jpg) no-repeat center center fixed !important;
+  background-size: cover !important;
+  height: 100vh !important;
+  margin-bottom: 0 !important;
+}
+
+.riders_background {
+  background: url(../images/raceCoverPicture.jpg) no-repeat center center fixed !important;
+  background-size: cover !important;
+  margin-bottom: 0 !important;
+}
+
+.countdown {
+  color: #ffac53;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3em;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+}
+
 .column img {
   margin-top: 8px;
   vertical-align: middle;
@@ -74,22 +83,6 @@ body {
   display: flex;
   justify-content: center;
   color: white;
-}
-
-.riders_table {
-  width: 75%;
-  text-align: center;
-  margin: 2em;
-}
-
-table,
-th,
-td {
-  border: 1px solid white;
-}
-
-th {
-  font-size: 40px;
 }
 
 #mapid {
@@ -108,43 +101,50 @@ th {
   text-decoration: underline;
 }
 
-.image_button_next {
-  border: 2px solid white;
-  color: white;
-  background-color: #ffac53;
-  padding: 1em;
-  display: flex;
-  position: fixed;
-  left: 50%;
-  bottom: 5%;
-  margin: 0.25em;
-  transition: background-color 0.25s;
+.home_link:active {
+  text-decoration: underline;
 }
 
-.image_button_prev {
-  border: 2px solid white;
-  color: white;
-  background-color: #ffac53;
-  padding: 1em;
-  position: fixed;
-  right: 50%;
-  bottom: 5%;
-  margin: 0.25em;
-  transition: background-color 0.25s;
+.image_button {
+  border: 2px solid white !important;
+  color: white !important;
+  background-color: #ffac53 !important;
+  padding: 1em !important;
+  transition: background-color 0.25s !important;
+  text-align: center !important;
 }
 
-.image_button_next:active {
-  background-color: #fe8300;
+.image_page_counter {
+  border: 2px solid white !important;
+  color: white !important;
+  background-color: #ffac53 !important;
+  padding: 1em !important;
+  border-radius: 0.25em;
 }
 
-.image_button_next:focus {
-  outline: none;
+.image_button:active {
+  background-color: #fe8300 !important;
 }
 
-.image_button_prev:active {
-  background-color: #fe8300;
+.image_button:focus {
+  outline: none !important;
 }
 
-.image_button_prev:focus {
-  outline: none;
+.riders_table {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+table,
+th,
+td {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  color: white !important;
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.55);
 }

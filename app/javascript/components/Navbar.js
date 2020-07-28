@@ -1,26 +1,22 @@
 import React from "react";
 import styles from "../components/css/app.module.css";
+import { Navbar, Nav } from "react-bootstrap";
 
-const Navbar = () => (
+const NavBar = () => (
   <div>
-    <nav className={styles.navbar}>
-      <a className={styles.navbar_link} href="/">
-        Home
-      </a>
-      <a className={styles.navbar_link} href="/gallery">
-        Gallery
-      </a>
-      <a className={styles.navbar_link} href="/riders">
-        Riders
-      </a>
-      <a className={styles.navbar_link} href="/locations">
-        Locations
-      </a>
-      <a className={styles.navbar_link} href="/contest">
-        Contest
-      </a>
-    </nav>
+    <Navbar expand="lg" className={styles.navbar}>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/">Home</Nav.Link>
+          <Nav.Link href="/gallery">Gallery</Nav.Link>
+          <Nav.Link href="/riders">Riders</Nav.Link>
+          <Nav.Link href="/locations">Locations</Nav.Link>
+          <Nav.Link href="/contest">Contest</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   </div>
 );
 
-export default Navbar;
+export default NavBar;
