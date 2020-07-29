@@ -61,6 +61,7 @@ body {
   background: url(../images/raceCoverPicture.jpg) no-repeat center center fixed !important;
   background-size: cover !important;
   margin-bottom: 0 !important;
+  border-radius: 0 !important;
 }
 
 .countdown {

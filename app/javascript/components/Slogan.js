@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../components/css/app.module.css";
-import { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 class Slogan extends React.Component {
@@ -64,7 +63,7 @@ class Slogan extends React.Component {
           <Form.Control
             ref={(input) => (formFields.first_name = input)}
             type="text"
-            placeholder="e.g. John"
+            placeholder="e.g. Alex"
             required
           />
         </Form.Group>
@@ -84,7 +83,7 @@ class Slogan extends React.Component {
           <Form.Control
             ref={(input) => (formFields.email = input)}
             type="email"
-            placeholder="e.g. john.smith@email.com"
+            placeholder="e.g. alex.smith@email.com"
             required
           />
         </Form.Group>
@@ -95,8 +94,10 @@ class Slogan extends React.Component {
             ref={(input) => (formFields.slogan = input)}
             type="text"
             placeholder="enter your slogan idea here"
+            maxLength="50"
             required
           />
+          <Form.Text className="text-muted">Maxiumum 50 characters</Form.Text>
         </Form.Group>
 
         <Button type="submit">Send →</Button>
