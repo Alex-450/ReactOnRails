@@ -32,22 +32,22 @@ body {
 
 .navbar {
   background: #ffac53;
-  color: white !important;
 }
 
 .footer {
   background-color: #ffac53;
-  color: white;
 }
 
 .navbar_link {
-  color: white;
   text-decoration: none;
 }
 
 .navbar_link:hover {
-  color: white;
-  text-decoration: underline;
+  text-decoration: underline !important;
+}
+
+.navbar_link:active {
+  text-decoration: underline !important;
 }
 
 .home_background {
@@ -74,6 +74,13 @@ body {
   align-items: center;
 }
 
+.form {
+  color: #ffac53;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 3em;
+  border-radius: 10px;
+}
+
 .column img {
   margin-top: 8px;
   vertical-align: middle;
@@ -87,7 +94,8 @@ body {
 }
 
 #mapid {
-  height: 100vh;
+  height: 500px;
+  margin: 2em;
 }
 
 .home_link {
@@ -107,20 +115,11 @@ body {
 }
 
 .image_button {
-  border: 2px solid white !important;
+  border: 0.5px solid white !important;
   color: white !important;
   background-color: #ffac53 !important;
-  padding: 1em !important;
   transition: background-color 0.25s !important;
   text-align: center !important;
-}
-
-.image_page_counter {
-  border: 2px solid white !important;
-  color: white !important;
-  background-color: #ffac53 !important;
-  padding: 1em !important;
-  border-radius: 0.25em;
 }
 
 .image_button:active {
@@ -148,4 +147,16 @@ tr:hover {
 
 tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.55);
+}
+
+.form_button {
+  border: 2px solid white !important;
+  color: white !important;
+  background-color: #ffac53 !important;
+}
+
+#page_header {
+  text-align: center;
+  background-color: #ffa23f;
+  color: #818181;
 }

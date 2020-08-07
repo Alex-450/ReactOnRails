@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import styles from "../components/css/app.module.css";
 
 function CountDownTimer() {
   const calculateTimeLeft = () => {
-    const difference = +new Date("2020-08-01") - +new Date();
+    const difference = +new Date("2020-09-01") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

@@ -1,13 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../components/css/app.module.css";
-import { flickrApi } from "./constants";
-import { Spinner, Button, Row, Container, Col, Image } from "react-bootstrap";
+import {
+  Button,
+  ButtonGroup,
+  Row,
+  Container,
+  Col,
+  Image,
+} from "react-bootstrap";
+import ErrorState from "./ErrorState";
+import LoadingState from "./LoadingState";
+import FlickrApi from "./ApiHooks/FlickrApi";
 
-function Images() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [pictures, setPictures] = useState([]);
-  const [pageNumber, setPageNumber] = useState(1);
+const Images = () => {
+  const { error, isLoaded, pictures, pageNumber, setPageNumber } = FlickrApi();
 
   const enablePrevButton = pageNumber > 1;
 
@@ -18,53 +24,25 @@ function Images() {
   const loadPrevPage = () => {
     setPageNumber(pageNumber - 1);
   };
-
-  useEffect(() => {
-    fetch(`${flickrApi}${pageNumber}`)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setPictures(result.photos.photo);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-    window.scrollTo(0, 0);
-  }, [pageNumber]);
-
   if (error) {
-    return <div>Error: {error.message}</div>;
+    console.log(error.message);
+    return <ErrorState />;
   } else if (!isLoaded) {
-    return (
-      <div>
-        <Row className="justify-content-center align-items-center m-3">
-          <Button variant="warning" disabled>
-            <Spinner
-              as="span"
-              animation="border"
-              size="sm"
-              role="status"
-              aria-hidden="true"
-            >
-              <span className="sr-only">Loading...</span>
-            </Spinner>
-            Loading...
-          </Button>
-        </Row>
-      </div>
-    );
+    return <LoadingState />;
   } else {
     return (
       <div>
         <Container fluid>
+          <Row
+            className="justify-content-center align-items-center"
+            id={styles.page_header}
+          >
+            <h2>Gallery</h2>
+          </Row>
           <Row>
             {pictures.map((pic) => (
-              <Col xs={6} md={4} className="my-2">
+              <Col key={pic.id} xs={6} md={4} className="my-2">
                 <Image
-                  key={pic.id}
                   thumbnail
                   alt="bike race"
                   src={
@@ -84,28 +62,26 @@ function Images() {
             ))}
           </Row>
           <Row className="fixed-bottom mb-5 mx-auto">
-            <Col xs={4} className="text-center p-1">
-              <Button
-                className={styles.image_button}
-                disabled={!enablePrevButton}
-                onClick={loadPrevPage}
-              >
-                ←
-              </Button>
-            </Col>
-            <Col xs={4} className="text-center p-1">
-              <p className={styles.image_page_counter}>{pageNumber}</p>
-            </Col>
-            <Col xs={4} className="text-center p-1">
-              <Button className={styles.image_button} onClick={loadNextPage}>
-                →
-              </Button>
+            <Col className="text-center">
+              <ButtonGroup size="lg">
+                <Button
+                  className={styles.image_button}
+                  disabled={!enablePrevButton}
+                  onClick={loadPrevPage}
+                >
+                  ←
+                </Button>
+                <Button className={styles.image_button}>{pageNumber}</Button>
+                <Button className={styles.image_button} onClick={loadNextPage}>
+                  →
+                </Button>
+              </ButtonGroup>
             </Col>
           </Row>
         </Container>
       </div>
     );
   }
-}
+};
 
 export default Images;

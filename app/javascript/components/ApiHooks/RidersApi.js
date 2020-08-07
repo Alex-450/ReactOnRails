@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-export const test = () => {
+const RidersApi = () => {
   const [riders, setRiders] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    fetch("/api/v1/riders.json")
+    fetch("api/v1/riders")
       .then((response) => response.json())
       .then(
         (data) => {
@@ -19,4 +19,7 @@ export const test = () => {
         }
       );
   }, []);
+  return { riders, error, isLoaded };
 };
+
+export default RidersApi;

@@ -1,83 +1,59 @@
 import React from "react";
 import styles from "../components/css/app.module.css";
-import { useState, useEffect } from "react";
-import Table from "react-bootstrap/Table";
-import { Spinner, Button, Container, Row, Jumbotron } from "react-bootstrap";
+import { Container, Row, Jumbotron, Table } from "react-bootstrap";
+import ErrorState from "./ErrorState";
+import LoadingState from "./LoadingState";
+import RidersApi from "./ApiHooks/RidersApi";
 
-function Riders() {
-  const [riders, setRiders] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    fetch("/api/v1/riders.json")
-      .then((response) => response.json())
-      .then(
-        (data) => {
-          setIsLoaded(true);
-          setRiders(data);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, []);
-
+const Riders = () => {
+  const { riders, error, isLoaded } = RidersApi();
   if (error) {
-    return <div>Error: {error.message}</div>;
+    console.log(error.message);
+    return <ErrorState />;
   } else if (!isLoaded) {
-    return (
-      <div>
-        <Container>
-          <Row className="justify-content-center align-items-center m-3">
-            <Button variant="warning" disabled>
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              >
-                <span className="sr-only">Loading...</span>
-              </Spinner>
-              Loading...
-            </Button>
-          </Row>
-        </Container>
-      </div>
-    );
+    return <LoadingState />;
   } else {
     return (
-      <Jumbotron className={styles.riders_background}>
-        <Container>
-          <Row>
-            <Table className="riders_table" bordered>
-              <caption>Riders</caption>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>City</th>
-                  <th>State</th>
-                </tr>
-              </thead>
-              <tbody>
-                {riders.map((rider) => (
-                  <tr key={rider.id}>
-                    <td>
-                      {rider.first_name} {rider.last_name}
-                    </td>
-                    <td>{rider.city}</td>
-                    <td>{rider.state}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </Table>
-          </Row>
-        </Container>
-      </Jumbotron>
+      <div>
+        <div>
+          <Container fluid>
+            <Row
+              className="justify-content-center align-items-center"
+              id={styles.page_header}
+            >
+              <h2>Riders</h2>
+            </Row>
+          </Container>
+          <Jumbotron className={styles.riders_background}>
+            <Container>
+              <Row className="text-center">
+                <Table bordered size="sm">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>City</th>
+                      <th>State</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {riders.map((rider) => (
+                      <tr key={rider.id}>
+                        <td>
+                          {rider.first_name} {rider.last_name}
+                        </td>
+                        <td>{rider.city}</td>
+                        <td>{rider.state}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </Row>
+            </Container>
+          </Jumbotron>
+        </div>
+      </div>
     );
   }
-}
+};
 
 export default Riders;
