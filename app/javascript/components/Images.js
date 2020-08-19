@@ -19,10 +19,12 @@ const Images = () => {
 
   const loadNextPage = () => {
     setPageNumber(pageNumber + 1);
+    window.scrollTo(0, 0);
   };
 
   const loadPrevPage = () => {
     setPageNumber(pageNumber - 1);
+    window.scrollTo(0, 0);
   };
   if (error) {
     console.log(error.message);

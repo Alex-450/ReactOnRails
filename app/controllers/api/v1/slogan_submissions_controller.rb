@@ -1,6 +1,6 @@
 class Api::V1::SloganSubmissionsController < ApplicationController
     def index
-        render json: Slogan_Submission.all
+        render json: SloganSubmission.all
     end
     def create
         slogan_submission = SloganSubmission.create(slogan_submission_params)

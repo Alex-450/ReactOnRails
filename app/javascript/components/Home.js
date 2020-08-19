@@ -1,9 +1,10 @@
 import React from "react";
 import CountDowntimer from "./CountdownTimer";
 import ImageCarousel from "./ImageCarousel";
+import ContestCard from "./ContestCard";
 import styles from "../components/css/app.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Jumbotron } from "react-bootstrap";
+import { Container, Row, Col, Jumbotron, CardDeck } from "react-bootstrap";
 
 class Home extends React.Component {
   render() {
@@ -30,7 +31,12 @@ class Home extends React.Component {
             </div>
           </Container>
         </Jumbotron>
-        <ImageCarousel />
+        <Container className="my-3">
+          <CardDeck>
+            <ImageCarousel />
+            <ContestCard />
+          </CardDeck>
+        </Container>
       </div>
     );
   }

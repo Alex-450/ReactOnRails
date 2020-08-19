@@ -20,7 +20,6 @@ const FlickrApi = () => {
           setError(error);
         }
       );
-    window.scrollTo(0, 0);
   }, [pageNumber]);
   return { error, isLoaded, pictures, pageNumber, setPageNumber };
 };

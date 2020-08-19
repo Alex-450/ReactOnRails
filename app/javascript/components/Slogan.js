@@ -1,15 +1,20 @@
 import React from "react";
 import styles from "../components/css/app.module.css";
 import { Form, Button, Jumbotron, Container, Col, Row } from "react-bootstrap";
+import SloganSubmitted from "./SloganSubmitted";
 
 class Slogan extends React.Component {
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {
+      isSubmitted: false,
+    };
   }
 
   handleSubmit(event, first_name, last_name, email, slogan) {
     console.log(first_name, last_name, email, slogan);
+    this.setState({ isSubmitted: true });
     let data = JSON.stringify({
       slogan_submission: {
         first_name: first_name,
@@ -117,6 +122,13 @@ class Slogan extends React.Component {
             </div>
           </Container>
         </Jumbotron>
+        {this.state.isSubmitted && (
+          <Row className="my-3">
+            <Col>
+              <SloganSubmitted />
+            </Col>
+          </Row>
+        )}
       </div>
     );
   }

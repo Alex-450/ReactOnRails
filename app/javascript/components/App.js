@@ -8,11 +8,13 @@ import Locations from "./Locations";
 import Slogan from "./Slogan";
 import NavBar from "./NavBar";
 import Footer from "./Footer";
+import TitleNav from "./TitleNav";
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
+        <TitleNav />
         <NavBar />
         <Switch>
           <Route exact path="/" component={Home} />

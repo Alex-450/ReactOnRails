@@ -1,5 +1,5 @@
 import React from "react";
-import { Carousel, Container, Button } from "react-bootstrap";
+import { Carousel, Button, Card } from "react-bootstrap";
 import styles from "./css/app.module.css";
 import ErrorState from "./ErrorState";
 import LoadingState from "./LoadingState";
@@ -15,12 +15,12 @@ const ImageCarousel = () => {
     return <LoadingState />;
   } else {
     return (
-      <Container fluid className="my-3">
+      <Card className="text-center">
         <Carousel controls={false} interval={2000}>
           {pictures.map((pic) => (
             <Carousel.Item key={pic.id}>
               <img
-                width="100px"
+                width="250px"
                 height="300px"
                 className="d-block w-100"
                 src={
@@ -38,13 +38,17 @@ const ImageCarousel = () => {
               ></img>
             </Carousel.Item>
           ))}
-          <Carousel.Caption>
-            <Button className={styles.image_button} href="/gallery">
-              Full gallery →
-            </Button>
-          </Carousel.Caption>
         </Carousel>
-      </Container>
+        <Card.Body>
+          <Card.Title>Gallery</Card.Title>
+          <Card.Text>
+            See all the images uploaded to Flickr linked to the race.
+          </Card.Text>
+          <Button className={styles.image_button} href="/gallery">
+            Full gallery →
+          </Button>
+        </Card.Body>
+      </Card>
     );
   }
 };

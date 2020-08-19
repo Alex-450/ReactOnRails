@@ -30,8 +30,15 @@ body {
   padding: 0 4px;
 }
 
+#justify_content_center {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
 .navbar {
   background: #ffac53;
+  float: none !important;
+  color: #212529 !important;
 }
 
 .footer {
@@ -40,6 +47,7 @@ body {
 
 .navbar_link {
   text-decoration: none;
+  color: #212529 !important;
 }
 
 .navbar_link:hover {
@@ -159,4 +167,24 @@ tr:nth-child(even) {
   text-align: center;
   background-color: #ffa23f;
   color: #818181;
+}
+
+.contest_image {
+  width: 100%;
+  height: 300px;
+  background-color: #ffa23f;
+  color: #818181;
+  position: relative;
+}
+
+.contest_title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title_nav_link {
+  color: #212529 !important;
+  font-size: 1.75rem !important;
 }
