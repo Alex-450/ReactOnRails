@@ -4,18 +4,20 @@ This is a Rails app with React frontend and Bootstrap css.
 
 External API calls are made using the Flickr public API and Leaflet (https://react-leaflet.js.org/).
 
-# Versioning
+## Versioning
 
 - Rails version: 6.0.0
 - React version: 16.13.1
 - Bootstrap version: 4.5.0
 - Leaflet version: 1.6.0
 
-# To run the application:
+## To run the application:
 
-From the route directory, run the command `bin rails s`
+1. Open the root folder
+2. Run: bin/rails s to start the puma server
+3. Go to the specified localhost address
 
-# Feautures
+## Features
 
 - Countdown timer to date of race on homepage
 - Image carousel using Flickr API images
