@@ -11,7 +11,7 @@ External API calls are made using the Flickr public API and Leaflet (https://rea
 - Bootstrap version: 4.5.0
 - Leaflet version: 1.6.0
 
-## To run the application:
+## To run the application
 
 1. Open the root folder
 2. Run: bin/rails s to start the puma server
