@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Toast } from "react-bootstrap";
+import styles from "../components/css/app.module.css";
 
 class SloganSubmitted extends React.Component {
   constructor(props) {
@@ -15,7 +16,11 @@ class SloganSubmitted extends React.Component {
     return (
       <div>
         <Container>
-          <Toast show={this.state.showToast} onClose={this.toggleShowToast}>
+          <Toast
+            show={this.state.showToast}
+            onClose={this.toggleShowToast}
+            className={styles.slogan_toast}
+          >
             <Toast.Header>
               <strong>Thanks!</strong>
             </Toast.Header>

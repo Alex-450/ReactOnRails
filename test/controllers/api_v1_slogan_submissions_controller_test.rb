@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class SloganSubmissionsControllerTest < ActionDispatch::IntegrationTest
-
     
     test "should create new slogan submission" do
         assert_difference('SloganSubmission.count') do
@@ -9,10 +8,8 @@ class SloganSubmissionsControllerTest < ActionDispatch::IntegrationTest
     end
 end
 
-test "should show slogan submissions index" do
-    get '/api/v1/slogan_submissions'
-    assert_response :success
-end
-
-
+    test "should show slogan submissions index" do
+        get '/api/v1/slogan_submissions'
+        assert_response :success
+    end
 end

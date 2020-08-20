@@ -188,3 +188,12 @@ tr:nth-child(even) {
   color: #212529 !important;
   font-size: 1.75rem !important;
 }
+
+.slogan_toast {
+  height: 150px;
+  width: 250px;
+  position: absolute;
+  left: 50%;
+  margin-left: -125px;
+  top: 50%;
+}

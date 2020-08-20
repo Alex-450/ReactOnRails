@@ -120,15 +120,15 @@ class Slogan extends React.Component {
                 </Col>
               </Row>
             </div>
+            {this.state.isSubmitted && (
+              <Row className="my-3">
+                <Col>
+                  <SloganSubmitted />
+                </Col>
+              </Row>
+            )}
           </Container>
         </Jumbotron>
-        {this.state.isSubmitted && (
-          <Row className="my-3">
-            <Col>
-              <SloganSubmitted />
-            </Col>
-          </Row>
-        )}
       </div>
     );
   }
