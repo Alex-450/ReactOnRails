@@ -35,4 +35,4 @@ External API calls are made using the Flickr public API and Leaflet (https://rea
 ### Running all tests:
 
 1. Open the root folder
-2. Run `bin/rails test` OR `bin/rails test:system test` to run all tests including system tests.
+2. Run `bin/rails test` to run all controller tests OR `bin/rails test:system test` to run all tests including system tests.
