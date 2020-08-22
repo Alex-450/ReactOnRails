@@ -2,7 +2,7 @@
 
 This is a Rails app with React frontend and Bootstrap css.
 
-External API calls are made using the Flickr public API and Leaflet (https://react-leaflet.js.org/).
+External API calls are made using the Flickr public API and the map feature was built with Leaflet (https://react-leaflet.js.org/).
 
 ## Versioning
 
