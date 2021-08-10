@@ -14,8 +14,11 @@ External API calls are made using the Flickr public API and the map feature was 
 ## Running the application
 
 1. Open the root folder
-2. Run: bin/rails s to start the puma server
-3. Go to the specified localhost address
+2. run `bundle install` to install all gems
+3. run `rake db:migrate` to make sure db is up to date
+4. run `rake db:seed` to populate db data
+5. run bin/rails s to start the puma server
+6. Go to the specified localhost address
 
 ## Features
 
