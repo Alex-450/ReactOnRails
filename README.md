@@ -6,6 +6,7 @@ External API calls are made using the Flickr public API and the map feature was 
 
 ## Versioning
 
+- Ruby version: 2.7.3
 - Rails version: 6.0.0
 - React version: 16.13.1
 - Bootstrap version: 4.5.0
