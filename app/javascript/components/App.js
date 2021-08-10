@@ -6,7 +6,7 @@ import Images from "./Images";
 import Riders from "./Riders";
 import Locations from "./Locations";
 import Slogan from "./Slogan";
-import NavBar from "./NavBar";
+import NavBar from "./Navbar"
 import Footer from "./Footer";
 import TitleNav from "./TitleNav";
 
